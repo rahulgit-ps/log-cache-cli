@@ -1,14 +1,14 @@
 language: go
-arch:
-  - amd64
-  - arm64
 
-
-go:
-  - 1.9.x
-  - 1.10.x
-  - 1.15.x
-  - master
+jobs:
+  - arch: amd64
+    go:
+      - 1.9.x
+      - 1.10.x
+      - master
+  - arch: arm64
+    go:
+      - 1.15.x
 
 install: |
   mkdir -p $HOME/gopath/src/code.cloudfoundry.org/log-cache-cli
