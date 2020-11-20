@@ -1,5 +1,5 @@
 language: go
-
+dist: focal
 arch:
   - amd64
   - arm64
@@ -8,10 +8,8 @@ arch:
 go:
   - 1.9.x
   - 1.10.x
+  - 1.15.x
   - master
-  - if [ "${TRAVIS_CPU_ARCH}" == "arm64" ]; then
-     1.15.x;
-    fi
 
 install: |
   mkdir -p $HOME/gopath/src/code.cloudfoundry.org/log-cache-cli
