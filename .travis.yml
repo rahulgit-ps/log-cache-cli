@@ -1,15 +1,4 @@
 language: go
-dist: focal
-arch:
-  - amd64
-  - arm64
-
-
-go:
-  - 1.9.x
-  - 1.10.x
-  - 1.15.x
-  - master
 
 install: |
   mkdir -p $HOME/gopath/src/code.cloudfoundry.org/log-cache-cli
@@ -20,5 +9,17 @@ install: |
 script: go test code.cloudfoundry.org/log-cache-cli/... --race
 
 matrix:
+  include:
+    - arch: amd64
+      go:
+        - 1.9.x
+        - 1.10.x
+        - 1.15.x
+        - master
+    - arch: arm64
+      go:
+        - 1.13.x
+        - 1.14.x
+        - 1.15.x
   allow_failures:
   - go: master
