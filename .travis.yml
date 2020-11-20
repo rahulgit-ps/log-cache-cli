@@ -18,3 +18,6 @@ script: go test code.cloudfoundry.org/log-cache-cli/... --race
 matrix:
   allow_failures:
   - go: master
+  exclude:
+  - arch: arm64
+    go: master
