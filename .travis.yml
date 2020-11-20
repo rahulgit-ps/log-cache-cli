@@ -9,7 +9,7 @@ install: |
 script: go test code.cloudfoundry.org/log-cache-cli/... --race
 
 matrix:
-  include:
+  jobs:
     - arch: amd64
       go:
         - 1.9.x
